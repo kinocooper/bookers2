@@ -12,9 +12,9 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   protected
 
   def configure_permitted_parameters
-    # サインアップ・ログイン時にnameも受け取れるように
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+    # サインアップ・ログイン時にemailの値も受け取れるように
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+    #devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
   end
 
 end
