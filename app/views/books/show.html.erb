@@ -1,2 +1,36 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+
+<!--sidebarテンプレート呼び出し-->
+  <%= render 'users/sidebar', user: @user, book: @newBook %>
+
+    <div class="col-lg-8">
+      <h2>Books detail</h2>
+      <table>
+        <tr>
+          <td>
+            <%= image_tag @user.get_profile_image("100x100") %><br>
+            <%= link_to @user.name,user_path(@user.id) %>
+          </td>
+          <td>
+            <%= @book.title %>　<!--←仮で全角スペースあり-->
+          </td>
+          <td>
+            <%= @book.body %>
+          </td>
+          <% if @user == current_user %>
+            <td>
+              <%= link_to "Edit",edit_book_path(@book.id) %>
+            </td>
+            <td>
+              <%= link_to "Destroy",book_path(@book.id),method: :delete %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+</div>
