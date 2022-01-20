@@ -11,4 +11,13 @@ class Book < ApplicationRecord
     profile_image.variant(resize:size).processed
   end
 
+
+  # def get_edit_route(x)
+  #   if x == current_user.id
+  #     edit_user_path(current_user.id)
+  #   else
+  #     user_path(current_user.id)
+  #   end
+  # end
+  
 end
