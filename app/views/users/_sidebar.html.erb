@@ -16,11 +16,11 @@
         </tr>
       </table>
 
-      <% if user == current_user %>
+      <%# if user == current_user %>
         <p><%= link_to "[ユーザ情報編集！]",edit_user_path(user.id) %></p>
-      <% else %>
-        <p><%= link_to "[ユーザ情報編集！]",user_path(current_user.id) %></p>
-      <% end %>
+      <%# else %>
+        <!--<p><%#= link_to "[ユーザ情報編集！]",user_path(current_user.id) %></p>-->
+      <%# end %>
 
 
 
