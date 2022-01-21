@@ -3,7 +3,8 @@
   <div class="row">
 
 <!--sidebarテンプレート呼び出し-->
-  <%= render 'users/sidebar', user: @user, book: @newBook %>
+  <%= render 'users/sidebar', user: @user, book: @book %>
+
 
     <div class="col-lg-8">
       <h2>Books detail</h2>
@@ -14,17 +15,17 @@
             <%= link_to @user.name,user_path(@user.id) %>
           </td>
           <td>
-            <%= @book.title %>　<!--←仮で全角スペースあり-->
+            <%= @thisBook.title %>　<!--←仮で全角スペースあり-->
           </td>
           <td>
-            <%= @book.body %>
+            <%= @thisBook.body %>
           </td>
           <% if @user == current_user %>
             <td>
-              <%= link_to "Edit",edit_book_path(@book.id) %>
+              <%= link_to "Edit",edit_book_path(@thisBook.id) %>
             </td>
             <td>
-              <%= link_to "Destroy",book_path(@book.id),method: :delete %>
+              <%= link_to "Destroy",book_path(@thisBook.id),method: :delete %>
             </td>
           <% end %>
         </tr>
