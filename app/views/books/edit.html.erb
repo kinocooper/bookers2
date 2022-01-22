@@ -1,21 +1,31 @@
-<h1>Editing Book</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
 
-<% if @book.errors.any? %>
-  <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <h1>Editing Book</h1>
+
+      <% if @book.errors.any? %>
+        <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
 
       <%= form_with model:@book,local:true do |f| %>
-        <label for="inputTitle">Title</label>
-        <%= f.text_field:title %><br>
-        <label for="inputBody">Opinion</label>
-        <%= f.text_area:body %>
 
-        <%= f.submit "Update Book" %>
+        <label for="inputTitle">Title</label>
+        <%= f.text_field:title,{class:"form-control"} %>
+
+        <label for="inputBody">Opinion</label>
+        <%= f.text_area:body,{class:"form-control"} %>
+
+        <%= f.submit "Update Book",{class:"btn btn-secondary"} %>
       <% end %>
 
       <%= link_to "Show",book_path(@book.id) %> | <%= link_to "Back",books_path %>
+    </div>
+  </div>
+</div>

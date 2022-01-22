@@ -8,10 +8,10 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-      <table>
+      <table class="table">
         <tr>
           <td>
-            <%= image_tag @user.get_profile_image("100x100") %><br>
+            <%= image_tag @user.get_profile_image("50x50") %><br>
             <%= link_to @user.name,user_path(@user.id) %>
           </td>
           <td>

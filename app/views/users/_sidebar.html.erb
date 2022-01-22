@@ -18,7 +18,7 @@
 
       <%# if user == current_user %>
         <p>
-          <%= link_to edit_user_path(user.id) do %>
+          <%= link_to edit_user_path(user.id),{class:"btn btn-outline-secondary btn-block"} do %>
             <i class="fas fa-user-cog"></i>
           <% end %>
         </p>
@@ -38,7 +38,7 @@
         <label for="inputBody">Opinion</label>
         <%= f.text_area:body %>
 
-        <%= f.submit "Create Book" %>
+        <%= f.submit "Create Book",{class:"btn btn-success"} %>
       <% end %>
 
     </div>
